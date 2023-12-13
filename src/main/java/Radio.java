@@ -8,9 +8,9 @@ public class Radio {
         this.currentStation = 0;
     }
 
-    public Radio(int maxStation) {
-        if (maxStation > 0) {
-            this.maxStation = maxStation;
+    public Radio(int quantityStation) {
+        if (quantityStation > 0) {
+            this.maxStation = quantityStation;
         } else {
             this.maxStation = 10;
         }

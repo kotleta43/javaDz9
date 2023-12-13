@@ -146,8 +146,8 @@ public class RadioTest {
 
     @Test
     public void radioConstructor_ValidMaxStations_ShouldSetMaxStations() {
-        Radio rad = new Radio(5);
-        assertEquals(5, rad.getMaxStation());
+        Radio rad = new Radio(10);
+        assertEquals(10, rad.getMaxStation());
     }
 
     @Test
