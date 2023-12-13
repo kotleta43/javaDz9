@@ -139,7 +139,7 @@ public class RadioTest {
     @Test
     public void test() {
         Radio rad = new Radio(10);
-        assertEquals(10, rad.getMaxStation());
+        assertEquals(9, rad.getMaxStation());
         assertEquals(0, rad.getCurrentStation());
     }
 
@@ -147,7 +147,7 @@ public class RadioTest {
     @Test
     public void radioConstructor_ValidMaxStations_ShouldSetMaxStations() {
         Radio rad = new Radio(10);
-        assertEquals(10, rad.getMaxStation());
+        assertEquals(9, rad.getMaxStation());
     }
 
     @Test

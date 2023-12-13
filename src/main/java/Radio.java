@@ -10,7 +10,7 @@ public class Radio {
 
     public Radio(int quantityStation) {
         if (quantityStation > 0) {
-            this.maxStation = quantityStation;
+            this.maxStation = quantityStation - 1;
         } else {
             this.maxStation = 10;
         }
