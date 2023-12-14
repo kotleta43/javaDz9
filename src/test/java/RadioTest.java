@@ -108,7 +108,7 @@ public class RadioTest {
     @Test
     public void nextStation_AtMaxStation_ShouldResetToMinStation() {
         Radio radio = new Radio();
-        radio.setCurrentStation(9);
+        radio.setCurrentStation(10);
         radio.nextStation();
         assertEquals(0, radio.getCurrentStation());
     }

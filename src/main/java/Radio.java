@@ -53,7 +53,7 @@ public class Radio {
     }
 
     public void nextStation() {
-        if (currentStation == maxStation - 1) {
+        if (currentStation == maxStation) {
             currentStation = 0;
         } else {
             currentStation++;
