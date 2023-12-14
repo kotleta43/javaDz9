@@ -108,7 +108,7 @@ public class RadioTest {
     @Test
     public void nextStation_AtMaxStation_ShouldResetToMinStation() {
         Radio radio = new Radio();
-        radio.setCurrentStation(9);
+        radio.setCurrentStation(10);
         radio.nextStation();
         assertEquals(0, radio.getCurrentStation());
     }
@@ -116,13 +116,15 @@ public class RadioTest {
     @Test
     public void prevStation_NotAtMinStation_ShouldDecreaseStation() {
         Radio radio = new Radio();
+        radio.setCurrentStation(9);
         radio.prevStation();
-        assertEquals(9, radio.getCurrentStation());
+        assertEquals(8, radio.getCurrentStation());
     }
 
     @Test
     public void prevStation_AtMinStation_ShouldResetToMaxStation() {
         Radio radio = new Radio();
+        radio.setCurrentStation(0);
         radio.prevStation();
         assertEquals(9, radio.getCurrentStation());
     }
@@ -133,5 +135,42 @@ public class RadioTest {
         radio.setCurrentStation(9);
         radio.prevStation();
         assertEquals(8, radio.getCurrentStation());
+    }
+    @Test
+    public void test() {
+        Radio rad = new Radio(10);
+        assertEquals(9, rad.getMaxStation());
+        assertEquals(0, rad.getCurrentStation());
+    }
+
+
+    @Test
+    public void radioConstructor_ValidMaxStations_ShouldSetMaxStations() {
+        Radio rad = new Radio(10);
+        assertEquals(9, rad.getMaxStation());
+    }
+
+    @Test
+    public void radioConstructor_ZeroMaxStations_ShouldSetDefault() {
+        Radio rad = new Radio(0);
+        assertEquals(10, rad.getMaxStation());
+    }
+
+    @Test
+    public void radioConstructor_NegativeMaxStations_ShouldSetDefault() {
+        Radio rad = new Radio(-5);
+        assertEquals(10, rad.getMaxStation());
+    }
+
+    @Test
+    public void radioConstructor_DefaultConstructor_ShouldSetDefaultMaxStations() {
+        Radio rad = new Radio();
+        assertEquals(10, rad.getMaxStation());
+    }
+
+    @Test
+    public void radioConstructor_DefaultConstructor_ShouldSetDefaultCurrentStation() {
+        Radio rad = new Radio();
+        assertEquals(0, rad.getCurrentStation());
     }
 }
